@@ -1,5 +1,7 @@
 # excel-course
 
+[Видео](https://drive.google.com/drive/folders/1JlxDbgI0URfcWNLXyth8ynpwly71fAKV?usp=sharing) с результатом на данном этапе разработки.
+
 Данный проект является учебным курсом, который я прохожу. 
 Приостановил прохождение, чтобы более глубоко изучить определенные темы в JavaScrypt. 
 
