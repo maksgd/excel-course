@@ -12,7 +12,15 @@
         "indent": "off",
         "comma-dangle": "off",
         "require-jsdoc": "off",
-        "operator-linebreak":"off"
+        "operator-linebreak": "off",
+        "tobject-curly-spacing": "off",
+        "eslint-disable-next-line": "off",
+        "object-curly-spacing": "off",
+        "max-len": "off",
+        "space-before-function-paren": "off"
     },
-    "extends": ["eslint:recommended", "google"]
+    "extends": [
+        "eslint:recommended",
+        "google"
+    ]
 }

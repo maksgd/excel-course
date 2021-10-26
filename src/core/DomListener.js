@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
-import {capitalize} from '@core/utils'
+// Используется для назначения каких либо слушателей.
+import { capitalize } from '@core/utils'
 
 export class DomListener {
     constructor($root, listeners = []) {

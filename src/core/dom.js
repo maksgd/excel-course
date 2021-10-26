@@ -1,3 +1,6 @@
+// утилита
+
+// На вход может подаваться #app, либо DOM node.
 class Dom {
     constructor(selector) {
         this.$el = typeof selector === 'string'
@@ -5,12 +8,26 @@ class Dom {
             : selector
     }
 
+    // this ссылается на экземпляр объекта, для которого в данный момент вызывается метод.
+    // Нужно чтобы делать чейны
     html(html) {
         if (typeof html === 'string') {
             this.$el.innerHTML = html
             return this
         }
         return this.$el.outerHTML.trim()
+    }
+    // $('div').html('<h1>Test</h1>').clear()
+
+    text(text) {
+        if (typeof text === 'string') {
+            this.$el.textContent = text
+            return this
+        }
+        if (this.$el.tagName.toLowerCase() === 'input') {
+            this.$el.value.trim()
+        }
+        return this.$el.textContent.trim()
     }
 
     clear() {
@@ -25,6 +42,10 @@ class Dom {
 
     off(eventType, callback) {
         this.$el.removeEventListener(eventType, callback)
+    }
+
+    find(selector) {
+        return $(this.$el.querySelector(selector))
     }
 
     append(node) {
@@ -62,7 +83,33 @@ class Dom {
             .keys(styles)
             .forEach(key => {
                 this.$el.style[key] = styles[key]
-        })
+            })
+    }
+
+    id(parse) {
+        if (parse) {
+            const parsed = this.id().split(':')
+            return {
+                row: +parsed[0],
+                col: +parsed[1]
+            }
+        }
+        return this.data.id
+    }
+
+    focus() {
+        this.$el.focus()
+        return this
+    }
+
+    addClass(className) {
+        this.$el.classList.add(className)
+        return this
+    }
+
+    removeClass(className) {
+        this.$el.classList.remove(className)
+        return this
     }
 }
 
