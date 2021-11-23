@@ -17,7 +17,6 @@ class Dom {
         }
         return this.$el.outerHTML.trim()
     }
-    // $('div').html('<h1>Test</h1>').clear()
 
     text(text) {
         if (typeof text !== 'undefined') {
